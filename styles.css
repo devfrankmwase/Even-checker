@@ -1,0 +1,89 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --card-color: #1e1e1e;
+    --button-bg: #0078ff;
+    --button-hover: #005fcc;
+    --h1-color: #ffffff;
+}
+
+.light-mode {
+    --bg-color: #f4f4f4;
+    --text-color: #222;
+    --card-color: #fff;
+    --button-bg: #222;
+    --button-hover: #555;
+    --h1-color: #222;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+header{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.container {
+    background: var(--card-color);
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rbga(0, 0, 0, 0.3);
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+h1{
+    color: var(--h1-color);
+}
+
+input{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 150px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: var(--button-bg);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--button-hover);
+}
+
+#result {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+#themeToggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--tet-color);
+    transition: transform 0.2 ease;
+
+}
+
+#themeToggle:hover {
+    transform: rotate(115deg);
+}
