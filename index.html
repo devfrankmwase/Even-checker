@@ -8,8 +8,17 @@
     </head>
     <body>
         <div class="container">
+            <div class="header">
             <h1>Even or Odd Checker</h1>
-            <button id="themeToggle"> 🌙</button>
+            <div class="theme-container">
+                <span>🌙☀️</span>
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
+            </div>
+            </div>
+
             <input type="number" id="numberInput" placeholder="Enter a number" />
             <button id="checkBtn">Check</button>
             <p id="result"></p>

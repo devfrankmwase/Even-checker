@@ -1,89 +1,130 @@
 :root {
     --bg-color: #121212;
-    --text-color: #ffffff;
+    --text-color: #fffdfd;
     --card-color: #1e1e1e;
-    --button-bg: #0078ff;
-    --button-hover: #005fcc;
-    --h1-color: #ffffff;
+    --button-bg: #aeb2b5;
+    --button-hover: #565758;
+    --button-color: rgb(27, 27, 27);
 }
 
 .light-mode {
     --bg-color: #f4f4f4;
-    --text-color: #222;
+    --text-color: #0b0a0a;
     --card-color: #fff;
     --button-bg: #222;
     --button-hover: #555;
-    --h1-color: #222;
+    --button-color: white;
 }
 
 body {
     font-family: Arial, sans-serif;
     background: var(--bg-color);
-    color: var(text-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.4s ease, color 0.4s ease;
 }
-
-header{ 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 
 .container {
     background: var(--card-color);
-    padding: 25px 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rbga(0, 0, 0, 0.3);
+    padding: 25px 35px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     text-align: center;
-    transition: background 0.3s ease;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 h1{
-    color: var(--h1-color);
+    margin: 0;
+    font-size: 1.8rem;
 }
 
 input{
     padding: 10px;
     border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    width: 150px;
+    border-radius: 6px;
+    margin-top: 20px;
+    width: 180px;
+    text-align: center;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+.light-mode input {
+    border: 1px solid #222;
 }
 
 button {
-    margin-top: 10px;
-    padding: 10px 20px;
+    margin-top: 15px;
+    padding: 10px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     background: var(--button-bg);
-    color: white;
+    color: var(--button-color);
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+    
 }
 
 button:hover {
     background: var(--button-hover);
 }
 
+button:active {
+    transform: scale(0.98);
+}
+
 #result {
     margin-top: 15px;
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
-#themeToggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
+.switch {
+ position: relative;
+ display: inline-block;
+ width: 50px;
+ height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
     cursor: pointer;
-    color: var(--tet-color);
-    transition: transform 0.2 ease;
-
+    inset: 0;
+    background-color: #888;
+    transition: 0.4s;
+    border-radius: 25px;
 }
 
-#themeToggle:hover {
-    transform: rotate(115deg);
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+.theme-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-color);
 }
